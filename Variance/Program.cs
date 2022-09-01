@@ -112,8 +112,8 @@ namespace Variance
             ICovariant<Base> covariant = vb_inherited; //covariant substitution
             IContraVariant<Inherited> contra = vb_base; //contravariant substitution
 
-            Base bo = covariant.Output();  //typesafe 
-            contra.Input(i); //typesafe
+            Base bo = covariant.Output();  //typesafe, getting an Inherited and assigning to a base reference is ok, Inherited is_a Box
+            contra.Input(i); //typesafe, putting Inherited to Base box, is perfectly fine, Inherited is_a Base
 
             //covariant.Input(i); // no input => safe  can't input Interface2 to Interface box, through base box
             //contra.Output(); // no Output => safe  otherwise Output would be Inherited type, runtime type would be only base, => runtime error
