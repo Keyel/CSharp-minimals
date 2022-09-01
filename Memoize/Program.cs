@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//#error version 
+// c# 7.3
 
 namespace funcs
 {
